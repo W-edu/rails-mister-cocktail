@@ -1,0 +1,15 @@
+<div class="container">
+  <h1>Cocktails</h1>
+  <% @cocktails.each do |cocktail| %>
+    <div class="card">
+      <h4>
+        <%= link_to(cocktail_path(cocktail.id)) do %>
+          <%= cocktail.name %>
+        <% end %>
+      </h4>
+      <p>Some blurb about the cocktail</p>      
+    </div>
+  <% end %>
+</div>
+
+<%= link_to "Somewhere", "https://www.google.com" %>
