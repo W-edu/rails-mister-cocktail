@@ -1,5 +1,5 @@
 class CocktailsController < ApplicationController
-  before_action :find_cocktail, only: [ :show ]
+  before_action :find_cocktail, only: [ :show, :edit, :update, :destroy ]
   def index
     @cocktails = Cocktail.all
   end
@@ -14,9 +14,28 @@ class CocktailsController < ApplicationController
 
   def create
     @cocktail = Cocktail.new(cocktail_params)
-    @cocktail.save
-    redirect_to cocktail_path(@cocktail)
+    if @cocktail.save
+      redirect_to cocktail_path(@cocktail)
+    else
+      render :new
+    end
   end
+
+  def edit; end
+
+  def update
+    if @cocktail.update(cocktail_params)
+      redirect_to @cocktail, notice: "Cocktail was siccessfully updated."
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @cocktail.destroy
+    redirect_to cocktails_path, notice: "Cocktail was deleted"
+  end
+
 
   private
 

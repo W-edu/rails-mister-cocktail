@@ -1,14 +1,15 @@
 <div class="container">
   <h1>Cocktails</h1>
-  <% @cocktails.each do |cocktail| %>
-    <div class="card">
-      <%= cl_image_tag cocktail.photo.key, width: 200, height: 200, crop: :fill) %>
-      <h4>
-        <%= link_to(cocktail_path(cocktail.id)) do %>
-          <%= cocktail.name %>
-        <% end %>
-      </h4>
-      <p>Some blurb about the cocktail</p>      
-    </div>
-  <% end %>
-</div>
+  <div class="d-flex">
+    <% @cocktails.each do |cocktail| %>
+      <div class="card" style="width: 18rem;">
+        <%= cl_image_tag cocktail.photo.key, crop: :fill %>
+        <div class="card-body">
+          <%= link_to(cocktail_path(cocktail.id)) do %>
+            <h5 class="card-title"><%= cocktail.name %></h5>
+          <% end %>
+          <p class="card-text">The effect of the Pan-galactic Gargle Blaster is like having your brain smashed out by a slice of lemon wrapped round a large gold brick.</p>
+        </div>
+      </div>
+    <% end %>
+  </div>

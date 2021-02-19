@@ -1,6 +1,6 @@
 <div class="container">
-  <div class="card">
-    <%= cl_image_tag @cocktail.photo.key, width: 200, height: 200, crop: :fill) %>
+  <div class="card d-flex">
+    <%= cl_image_tag @cocktail.photo.key, width: 200, height: 200, crop: :fill %>
     <h1><%= @cocktail.name %></h1>
   </div>
   <div class="card">
@@ -13,7 +13,21 @@
     <h4>Method</h4>
     <p>You can work it out on your own.</p>     
   </div>
+
   <div class="card">
-    <%= link_to "Back to cocktails", cocktails_path %>
+    <div class="d-flex justify-content-between">
+      <div class="col-sm-4">
+        <%= link_to "Back to cocktails", cocktails_path %>
+      </div>
+
+      <div class="col-sm-4">
+        <%= link_to "Edit cocktail", edit_cocktail_path(@cocktail) %>
+      </div>
+
+      <div class="col-sm-4">
+        <%= link_to "Delete cocktail", cocktails_path %>
+      </div>
+    </div>
   </div>
+
 </div>
