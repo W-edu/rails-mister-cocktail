@@ -1,3 +1,9 @@
-// Place all the styles related to the Cocktails controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+.banner {
+  background-image: url('https://res.cloudinary.com/dlm5qwdjs/image/upload/v1613925647/kqrbiuejhfjk0a3mmyoy.png');
+  color: white; 
+  height: 100vh;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

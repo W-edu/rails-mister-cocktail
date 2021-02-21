@@ -1,8 +1,14 @@
+<div class="banner">
+  <div class="banner-content">
+    <h2>Peacock? Cocktail!</h2>
+    <p>Never stop showing off</p>
+  </div>
+</div>
+
 <div class="container">
-  <h1>Cocktails</h1>
-  <div class="d-flex">
+  <div class="row">
     <% @cocktails.each do |cocktail| %>
-      <div class="card" style="width: 18rem;">
+      <div class="col-xs-12 col-sm-6 col-md-3">
         <%= cl_image_tag cocktail.photo.key, crop: :fill %>
         <div class="card-body">
           <%= link_to(cocktail_path(cocktail.id)) do %>
@@ -13,3 +19,4 @@
       </div>
     <% end %>
   </div>
+</div>
