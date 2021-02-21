@@ -8,8 +8,10 @@
 <div class="container">
   <div class="row">
     <% @cocktails.each do |cocktail| %>
-      <div class="col-xs-12 col-sm-6 col-md-3">
-        <%= cl_image_tag cocktail.photo.key, crop: :fill %>
+      <div class="cocktail-card col-xs-12 col-sm-6 col-md-3">
+        <div class="card-image">
+          <%= cl_image_tag cocktail.photo.key, crop: :fill %>
+        </div>
         <div class="card-body">
           <%= link_to(cocktail_path(cocktail.id)) do %>
             <h5 class="card-title"><%= cocktail.name %></h5>

@@ -1,3 +1,9 @@
+
+.container {
+  // width: 500px;
+  margin: 0 auto;
+}
+
 .banner {
   background-image: url('https://res.cloudinary.com/dlm5qwdjs/image/upload/v1613925647/kqrbiuejhfjk0a3mmyoy.png');
   color: white; 
@@ -6,4 +12,17 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.cocktail-card {
+  border-radius: 5px;
+  background-color: white;
+}
+
+.card-image {
+  width: 90%;
+  height: auto;
+  align-items: center;
+  justify-items: center;
+  // height: 350px;
 }
